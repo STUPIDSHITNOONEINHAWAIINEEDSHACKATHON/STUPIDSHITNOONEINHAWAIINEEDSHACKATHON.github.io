@@ -25,23 +25,25 @@ Basic Layout
 ================================================= */
 
 .container {
-  background-color: white;
   box-sizing: border-box;
   max-width: 1200px;
   margin: auto;
+  padding: 60px;
   text-align: center;
 }
 
 .main {
   clear: both;
-  padding: 60px;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 0px;
   margin-bottom: 0px;
 }
 
 a.logo:hover {
   text-decoration: none;
+}
+
+#logo {
+  color: red;
 }
 
 table.program {
@@ -56,7 +58,14 @@ table.program {
     width: 40%;
     font-weight: bold; }
   table.program td:nth-child(2) {
-    text-align: left; }
+    text-align: left;
+}
+
+.categories li {
+  background: yellow;
+  margin: 5px;
+  display: inline-block;
+}
 
 .center {
   text-align: center;
@@ -104,14 +113,45 @@ footer h2 {
   margin-top: 20px;
 }
 
+/* =================================================
+Sections
+================================================= */
 
+#header {
+  background-color: #9eff36;
+}
+
+#about {
+  background-color: #E6834A;
+}
+
+#schedule {
+  background-color: #fa5ba5;
+}
+
+#register {
+  background-color: #303030;
+  color: white;
+}
+
+#categories {
+  background-color: #42b983;
+}
+
+#other {
+  background-color: #9373C1;
+}
+
+#sponsors {
+  background-color: #00B8A9;
+}
 
 /* =================================================
 Mobile
 ================================================= */
 
 @media screen and (max-width: 800px) {
-  .main, footer {
+  .main {
     padding: 15px;
   }
 
@@ -121,5 +161,31 @@ Mobile
     margin-top: 10px;
     margin-bottom: 20px;
   }
+
+  h2 {
+    font-size: 40px;
+    line-height: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
 }
 
+@media screen and (max-width: 500px) {
+  .main {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 40px;
+    line-height: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 20px;
+    line-height: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}
