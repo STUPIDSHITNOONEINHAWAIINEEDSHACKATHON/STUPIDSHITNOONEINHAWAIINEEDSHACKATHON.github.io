@@ -67,6 +67,18 @@ table.program {
   display: inline-block;
 }
 
+.sponsors li {
+  background: yellow;
+  margin: 5px;
+  display: inline-block;
+}
+
+.link {
+  background: yellow;
+  margin: 5px;
+  display: inline-block;
+}
+
 .center {
   text-align: center;
 }
@@ -187,5 +199,22 @@ Mobile
     line-height: 20px;
     margin-top: 10px;
     margin-bottom: 20px;
+  }
+
+  table.program {
+    width: 300px;
+    margin: 0 auto;
+    position: relative;
+    max-width: 90%
+  }
+    table.program td {
+      vertical-align: text-top;
+      padding: 0.2em 0.3em; }
+    table.program td:nth-child(1) {
+      text-align: right;
+      width: 40%;
+      font-weight: bold; }
+    table.program td:nth-child(2) {
+      text-align: left;
   }
 }
