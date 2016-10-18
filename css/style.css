@@ -134,7 +134,8 @@ Sections
 }
 
 #about {
-  background-color: #E6834A;
+  background-color: #303030;
+  color: white;
 }
 
 #schedule {
@@ -142,8 +143,7 @@ Sections
 }
 
 #register {
-  background-color: #303030;
-  color: white;
+  background-color: #E6834A;
 }
 
 #categories {
@@ -163,10 +163,6 @@ Mobile
 ================================================= */
 
 @media screen and (max-width: 800px) {
-  .main {
-    padding: 15px;
-  }
-
   h1 {
     font-size: 60px;
     line-height: 60px;
@@ -183,10 +179,6 @@ Mobile
 }
 
 @media screen and (max-width: 500px) {
-  .main {
-    padding: 15px;
-  }
-
   h1 {
     font-size: 40px;
     line-height: 40px;
