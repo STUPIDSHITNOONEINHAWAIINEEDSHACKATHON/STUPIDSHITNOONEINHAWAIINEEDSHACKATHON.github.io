@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @font-face {
   font-family: 'DropDead'; src: url('../font/DropDead.otf');
 }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background-color: white;
-  color: black;
+  color: #222;
+  letter-spacing: 1px;
   line-height: 1.3em;
   font-size: 16px;
 }
@@ -135,7 +137,7 @@ Sections
 
 #about {
   background-color: #303030;
-  color: white;
+  color: #ddd;
 }
 
 #schedule {

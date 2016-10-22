@@ -4,21 +4,25 @@ window.onload = function() {
 
 // splendid
 ;(window => {
+
   window.splendid = {};
+
   return window.splendid.init = _ => {
-    let bodyCount = 0; //
-    let flipCount = 0;
+
+    // keep track of the clicks
+    let bodyCount = 0;
     let body = document.querySelector('body');
-    let main = document.querySelector('.main');
 
     body.addEventListener('click', event => {
       if (bodyCount < 20) {
         return bodyCount++;
       } else {
+        // get the party started
         getGiphyImage(getRandomTag(tagCollection));
       }
     })
 
+    // xhr to giphy and preps image for appearance
     function getGiphyImage(randomTag) {
       let req = new XMLHttpRequest();
       req.addEventListener("load", function(){
@@ -51,6 +55,10 @@ window.onload = function() {
       return encodeURI(tagCollection[Math.floor(Math.random() * tagCollection.length)])
     }
 
+    // infinite scroll and flippy fun
+    let flipCount = 0;
+    let main = document.querySelector('.main');
+
     window.onscroll = function() {
       let offset = document.body.scrollTop + window.innerHeight + 300;
       let height = document.body.offsetHeight;
@@ -75,6 +83,7 @@ window.onload = function() {
   }
 })(window)
 
+// https://github.com/GomaGames/BizDev-Meeting
 const tagCollection = [
   'social',
   '4G',
