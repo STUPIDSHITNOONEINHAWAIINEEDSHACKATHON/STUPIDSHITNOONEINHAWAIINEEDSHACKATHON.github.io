@@ -8,7 +8,6 @@ window.onload = function() {
   window.splendid = {};
 
   return window.splendid.init = _ => {
-
     // keep track of the clicks
     let bodyCount = 0;
     let body = document.querySelector('body');
@@ -20,7 +19,7 @@ window.onload = function() {
         // get the party started
         getGiphyImage(getRandomTag(tagCollection));
       }
-    })
+    });
 
     // xhr to giphy and preps image for appearance
     function getGiphyImage(randomTag) {
@@ -52,7 +51,7 @@ window.onload = function() {
     }
 
     function getRandomTag(tagCollection) {
-      return encodeURI(tagCollection[Math.floor(Math.random() * tagCollection.length)])
+      return encodeURI(tagCollection[Math.floor(Math.random() * tagCollection.length)]);
     }
 
     // infinite scroll and flippy fun
