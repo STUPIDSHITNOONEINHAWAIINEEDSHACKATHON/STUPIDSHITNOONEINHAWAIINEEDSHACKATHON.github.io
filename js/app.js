@@ -7,6 +7,7 @@ window.onload = function() {
   window.splendid = {};
   return window.splendid.init = _ => {
     let bodyCount = 0; //
+    let flipCount = 0;
     let body = document.querySelector('body');
     let main = document.querySelector('.main');
 
@@ -22,29 +23,19 @@ window.onload = function() {
       let req = new XMLHttpRequest();
       req.addEventListener("load", function(){
         let img_url = JSON.parse(this.responseText).data.fixed_width_downsampled_url;
-        let imgElement = document.createElement('img');
 
+        let imgElement = document.createElement('img');
         imgElement.src = img_url;
         imgElement.classList.add('splendid');
 
         let pageYOffset = window.pageYOffset;
-        console.log('pageYOffset', pageYOffset);
-
         let windowHeight = window.innerHeight;
-        console.log('windowHeight: ', windowHeight);
-
-        console.log('top spawn: ', Math.floor(Math.random() * windowHeight) + pageYOffset);
-
         let windowWidth = window.innerWidth;
-        console.log('windowWidth: ', windowWidth);
-
-        console.log('left spawn: ', Math.floor(Math.random() * windowWidth));
 
         imgElement.setAttribute('alt', randomTag);
         imgElement.style.position = 'absolute';
+
         imgElement.onload = _ => {
-        //   console.log(imgElement.height)
-        //   console.log(imgElement.width)
           imgElement.style.top = `${Math.floor(Math.random() * windowHeight) + (pageYOffset - imgElement.height + 50)}px`;
           imgElement.style.left = `${Math.floor(Math.random() * (windowWidth - imgElement.width))}px`;
         };
@@ -61,17 +52,24 @@ window.onload = function() {
     }
 
     window.onscroll = function() {
-      var d = document.body;
-      var offset = d.scrollTop + window.innerHeight + 300;
-      var height = d.offsetHeight;
-
-      console.log('offset = ' + offset);
-      console.log('height = ' + height);
+      let offset = document.body.scrollTop + window.innerHeight + 300;
+      let height = document.body.offsetHeight;
 
       if (offset >= height) {
-        console.log('At the bottom');
         let mainClone = main.cloneNode(true);
-        main.appendChild(mainClone)
+
+        if (flipCount % 2 === 0) {
+          let sectionElements = mainClone.querySelectorAll('.main > div');
+
+          Array.prototype.forEach.call(sectionElements, section => {
+            if (Math.floor(Math.random() * 2)) {
+              section.style.transform = 'rotate(180deg)';
+            }
+            return section;
+          });
+        }
+
+        main.appendChild(mainClone);
       }
     };
   }
