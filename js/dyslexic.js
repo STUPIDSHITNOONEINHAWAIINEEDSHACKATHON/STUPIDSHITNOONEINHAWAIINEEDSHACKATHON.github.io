@@ -15,8 +15,8 @@ var messages = [
   "Did you just assume my gender?",
   "How are mirrors real if our eyes aren't"
 ];
-function autism() {
-  document.getElementById('autism').value = messages[Math.floor((Math.random() * messages.length))]
+function meme() {
+  document.getElementById('meme').value = messages[Math.floor((Math.random() * messages.length))]
   var p = document.getElementsByTagName('p')
   for(var i = 0; i < p.length; i++) {
     var txt = p[i].innerText
