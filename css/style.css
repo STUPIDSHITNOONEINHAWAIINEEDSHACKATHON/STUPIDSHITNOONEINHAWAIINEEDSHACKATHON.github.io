@@ -1,15 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Lato:300');
 @font-face {
   font-family: 'DropDead'; src: url('../font/DropDead.otf');
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
   background-color: white;
-  color: #222;
-  letter-spacing: 1px;
-  line-height: 1.3em;
+
+  font-family: 'Lato', sans-serif;
   font-size: 1.2em;
+  font-weight: 300;
+  color: #222;
+  letter-spacing: 1.3px;
+  line-height: 1.3em;
 }
 
 a {

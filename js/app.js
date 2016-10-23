@@ -17,7 +17,7 @@ window.onload = function() {
         return bodyCount++;
       } else {
         // get the party started
-        getGiphyImage(getRandomTag(tagCollection));
+        return getGiphyImage(getRandomTag(tagCollection));
       }
     });
 
@@ -43,7 +43,7 @@ window.onload = function() {
           imgElement.style.left = `${Math.floor(Math.random() * (windowWidth - imgElement.width))}px`;
         };
 
-        body.appendChild(imgElement);
+        return body.appendChild(imgElement);
       });
 
       req.open("GET", `https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=${randomTag}`);
@@ -76,7 +76,8 @@ window.onload = function() {
           });
         }
 
-        main.appendChild(mainClone);
+        mainClone.classList.add('fuck-inifite-scroll');
+        return body.appendChild(mainClone);
       }
     };
   }
