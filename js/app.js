@@ -1,16 +1,17 @@
 window.onload = function() {
-  window.splendid.init();
+  window.splendid.gifs();
+  window.splendid.infiniteScroll();
 };
 
 // splendid
 ;(window => {
+  let body = document.querySelector('body');
 
   window.splendid = {};
 
-  return window.splendid.init = _ => {
+  window.splendid.gifs = _ => {
     // keep track of the clicks
     let bodyCount = 0;
-    let body = document.querySelector('body');
 
     body.addEventListener('click', event => {
       if (bodyCount < 20) {
@@ -53,9 +54,10 @@ window.onload = function() {
     function getRandomTag(tagCollection) {
       return encodeURI(tagCollection[Math.floor(Math.random() * tagCollection.length)]);
     }
+  };
 
+  window.splendid.infiniteScroll = _ => {
     // infinite scroll and flippy fun
-    let flipCount = 0;
     let main = document.querySelector('.main');
 
     window.onscroll = function() {
@@ -65,22 +67,20 @@ window.onload = function() {
       if (offset >= height) {
         let mainClone = main.cloneNode(true);
 
-        if (flipCount % 2 === 0) {
-          let sectionElements = mainClone.querySelectorAll('.main > div');
+        let sectionElements = mainClone.querySelectorAll('.main > div');
 
-          Array.prototype.forEach.call(sectionElements, section => {
-            if (Math.floor(Math.random() * 2)) {
-              section.style.transform = 'rotate(180deg)';
-            }
-            return section;
-          });
-        }
+        Array.prototype.forEach.call(sectionElements, section => {
+          if (Math.floor(Math.random() * 2)) {
+            section.style.transform = 'rotate(180deg)';
+          }
+          return section;
+        });
 
-        mainClone.classList.add('fuck-inifite-scroll');
+        mainClone.classList.add('fuck-infinite-scroll');
         return body.appendChild(mainClone);
       }
     };
-  }
+  };
 })(window)
 
 // https://github.com/GomaGames/BizDev-Meeting
