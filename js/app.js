@@ -56,28 +56,42 @@ window.onload = function() {
 
   window.splendid.infiniteScroll = _ => {
     let main = document.querySelector('.main');
+    let infiniteCount = 0;
+    let baseProbability = 0.3;
+    let rollingProbability = 0;
 
     window.onscroll = function() {
       let offset = document.body.scrollTop + window.innerHeight + 300;
       let height = document.body.offsetHeight;
 
       if (offset >= height) {
-        let mainClone = main.cloneNode(true);
+        infiniteCount += 0.1;
+        rollingProbability += infiniteCount;
 
+        let mainClone = main.cloneNode(true);
         let sectionElements = mainClone.querySelectorAll('.main > div');
 
         Array.prototype.forEach.call(sectionElements, section => {
-          if (Math.floor(Math.random() * 2)) {
-            section.style.transform = 'rotate(180deg)';
+          if (maybe(baseProbability * rollingProbability)) {
+            section.style.transform = `rotate(${Math.floor(Math.random() * 360)}deg)`;
           }
           return section;
         });
+
+        if (maybe(baseProbability)) {
+          mainClone.style.transform = 'rotate(180deg)';
+        }
 
         mainClone.classList.add('fuck-infinite-scroll');
         return body.appendChild(mainClone);
       }
     };
   };
+
+  function maybe(probability) {
+   return !!probability && Math.random() <= probability;
+  };
+
 })(window)
 
 // https://github.com/GomaGames/BizDev-Meeting
