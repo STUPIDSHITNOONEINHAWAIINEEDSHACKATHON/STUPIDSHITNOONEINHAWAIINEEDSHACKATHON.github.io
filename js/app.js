@@ -10,14 +10,12 @@ window.onload = function() {
   window.splendid = {};
 
   window.splendid.gifs = _ => {
-    // keep track of the clicks
     let bodyCount = 0;
 
     body.addEventListener('click', event => {
       if (bodyCount < 20) {
         return bodyCount++;
       } else {
-        // get the party started
         return getGiphyImage(getRandomTag(tagCollection));
       }
     });
@@ -57,7 +55,6 @@ window.onload = function() {
   };
 
   window.splendid.infiniteScroll = _ => {
-    // infinite scroll and flippy fun
     let main = document.querySelector('.main');
 
     window.onscroll = function() {
