@@ -13,9 +13,7 @@ window.onload = function() {
     let bodyCount = 0;
 
     body.addEventListener('click', event => {
-      if (bodyCount < 20) {
-        return bodyCount++;
-      } else {
+      if (event.target.nodeName !== 'A') {
         return getGiphyImage(getRandomTag(tagCollection));
       }
     });
@@ -38,8 +36,10 @@ window.onload = function() {
         imgElement.style.position = 'absolute';
 
         imgElement.onload = _ => {
-          imgElement.style.top = `${Math.floor(Math.random() * windowHeight) + (pageYOffset - imgElement.height + 50)}px`;
-          imgElement.style.left = `${Math.floor(Math.random() * (windowWidth - imgElement.width))}px`;
+          setTimeout(_ => {
+            imgElement.style.top = `${Math.floor(Math.random() * windowHeight) + (pageYOffset - imgElement.height + 50)}px`;
+            imgElement.style.left = `${Math.floor(Math.random() * (windowWidth - imgElement.width))}px`;
+          }, 0)
         };
 
         return body.appendChild(imgElement);
