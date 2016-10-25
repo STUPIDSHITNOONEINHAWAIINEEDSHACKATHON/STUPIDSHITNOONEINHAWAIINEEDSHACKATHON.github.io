@@ -3,6 +3,11 @@
   font-family: 'DropDead'; src: url('../font/DropDead.otf');
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   background-color: white;
 
