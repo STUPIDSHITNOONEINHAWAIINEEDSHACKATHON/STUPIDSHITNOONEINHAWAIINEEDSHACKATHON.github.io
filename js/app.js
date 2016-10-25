@@ -61,7 +61,7 @@ window.onload = function() {
     let rollingProbability = 0;
 
     window.onscroll = function() {
-      let offset = document.body.scrollTop + window.innerHeight + 300;
+      let offset = (window.pageYOffset || document.documentElement.scrollTop) + window.innerHeight + 300;
       let height = document.body.offsetHeight;
 
       if (offset >= height) {
