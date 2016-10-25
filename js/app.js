@@ -73,7 +73,8 @@ window.onload = function() {
 
         Array.prototype.forEach.call(sectionElements, section => {
           if (maybe(baseProbability * rollingProbability)) {
-            section.style.transform = `rotate(${randomBetween(-360, 360)}deg) translate(${randomBetween(-50, 50)}%, ${randomBetween(-50, 50)}%)`;
+            section.style.transform = `rotate(${randomBetween(-360, 360)}deg) translate(${randomBetween(-50, 50)}px, ${randomBetween(-50, 50)}px)`;
+            section.style.webkitTransform = `rotate(${randomBetween(-360, 360)}deg) translate(${randomBetween(-50, 50)}px, ${randomBetween(-50, 50)}px)`;
           }
           return section;
         });
