@@ -73,7 +73,7 @@ window.onload = function() {
 
         Array.prototype.forEach.call(sectionElements, section => {
           if (maybe(baseProbability * rollingProbability)) {
-            section.style.transform = `rotate(${Math.floor(Math.random() * 360)}deg)`;
+            section.style.transform = `rotate(${randomBetween(-360, 360)}deg) translate(${randomBetween(-50, 50)}%, ${randomBetween(-50, 50)}%)`;
           }
           return section;
         });
@@ -90,7 +90,11 @@ window.onload = function() {
 
   function maybe(probability) {
    return !!probability && Math.random() <= probability;
-  };
+  }
+
+  function randomBetween(min, max) {
+    return min + Math.random() * ( max + 1 - min);
+  }
 
 })(window)
 
