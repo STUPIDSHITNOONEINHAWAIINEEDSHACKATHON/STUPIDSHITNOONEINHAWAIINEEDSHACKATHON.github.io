@@ -98,7 +98,7 @@ window.onload = function() {
     return min + Math.random() * ( max + 1 - min);
   }
 
-})(window)
+})(window);
 
 // https://github.com/GomaGames/BizDev-Meeting
 const tagCollection = [
