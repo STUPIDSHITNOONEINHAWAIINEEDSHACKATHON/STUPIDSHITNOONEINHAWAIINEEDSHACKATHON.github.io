@@ -7,6 +7,9 @@ window.onload = function() {
 ;(window => {
   let body = document.querySelector('body');
 
+  let infiniteScrollDocumentFragment = document.createDocumentFragment();
+  body.appendChild(infiniteScrollDocumentFragment);
+
   window.splendid = {};
 
   window.splendid.gifs = _ => {
@@ -36,13 +39,11 @@ window.onload = function() {
         imgElement.style.position = 'absolute';
 
         imgElement.onload = _ => {
-          setTimeout(_ => {
-            imgElement.style.top = `${Math.floor(Math.random() * windowHeight) + (pageYOffset - imgElement.height + 50)}px`;
-            imgElement.style.left = `${Math.floor(Math.random() * (windowWidth - imgElement.width))}px`;
-          }, 0)
+          imgElement.style.top = `${Math.floor(Math.random() * windowHeight) + (pageYOffset - imgElement.height + 50)}px`;
+          imgElement.style.left = `${Math.floor(Math.random() * (windowWidth - imgElement.width))}px`;
         };
 
-        return body.appendChild(imgElement);
+        return infiniteScrollDocumentFragment.appendChild(imgElement);
       });
 
       req.open("GET", `https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=${randomTag}`);
