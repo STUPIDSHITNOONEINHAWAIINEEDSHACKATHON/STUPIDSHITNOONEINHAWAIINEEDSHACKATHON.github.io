@@ -26,6 +26,7 @@ window.onload = function() {
       let req = new XMLHttpRequest();
       req.addEventListener("load", function(){
         let img_url = JSON.parse(this.responseText).data.fixed_width_downsampled_url;
+        img_url = img_url.replace(/http:/, 'https:');
 
         let imgElement = document.createElement('img');
         imgElement.src = img_url;
@@ -43,7 +44,7 @@ window.onload = function() {
           imgElement.style.left = `${Math.floor(Math.random() * (windowWidth - imgElement.width))}px`;
         };
 
-        return infiniteScrollDocumentFragment.appendChild(imgElement);
+        return body.appendChild(imgElement);
       });
 
       req.open("GET", `https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=${randomTag}`);
