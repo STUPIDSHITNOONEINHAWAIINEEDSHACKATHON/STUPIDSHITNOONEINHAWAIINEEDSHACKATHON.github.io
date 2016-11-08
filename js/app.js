@@ -7,9 +7,6 @@ window.onload = function() {
 ;(window => {
   let body = document.querySelector('body');
 
-  let infiniteScrollDocumentFragment = document.createDocumentFragment();
-  body.appendChild(infiniteScrollDocumentFragment);
-
   window.splendid = {};
 
   window.splendid.gifs = _ => {
@@ -62,6 +59,8 @@ window.onload = function() {
     let baseProbability = 0.3;
     let rollingProbability = 0;
 
+    console.log('this happened');
+
     window.onscroll = function() {
       let offset = (window.pageYOffset || document.documentElement.scrollTop) + window.innerHeight + 300;
       let height = document.body.offsetHeight;
@@ -86,6 +85,10 @@ window.onload = function() {
         }
 
         mainClone.classList.add('fuck-infinite-scroll');
+
+        let infiniteScrollDocumentFragment = document.createDocumentFragment();
+        infiniteScrollDocumentFragment.appendChild(mainClone);
+
         return body.appendChild(mainClone);
       }
     };
