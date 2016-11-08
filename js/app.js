@@ -13,14 +13,21 @@ window.onload = function() {
     let bodyCount = 0;
 
     body.addEventListener('click', event => {
+      // care only about non `<a href>` clicks
       if (event.target.nodeName !== 'A') {
         return getGiphyImage(getRandomTag(tagCollection));
       }
     });
 
+    // choose random tag from biz-dev words list
+    function getRandomTag(tagCollection) {
+      return encodeURI(tagCollection[Math.floor(Math.random() * tagCollection.length)]);
+    }
+
     // xhr to giphy and preps image for appearance
     function getGiphyImage(randomTag) {
       let req = new XMLHttpRequest();
+
       req.addEventListener("load", function(){
         let img_url = JSON.parse(this.responseText).data.fixed_width_downsampled_url;
         img_url = img_url.replace(/http:/, 'https:');
@@ -47,10 +54,6 @@ window.onload = function() {
       req.open("GET", `https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=${randomTag}`);
       return req.send();
     }
-
-    function getRandomTag(tagCollection) {
-      return encodeURI(tagCollection[Math.floor(Math.random() * tagCollection.length)]);
-    }
   };
 
   window.splendid.infiniteScroll = _ => {
@@ -58,8 +61,6 @@ window.onload = function() {
     let infiniteCount = 0;
     let baseProbability = 0.3;
     let rollingProbability = 0;
-
-    console.log('this happened');
 
     window.onscroll = function() {
       let offset = (window.pageYOffset || document.documentElement.scrollTop) + window.innerHeight + 300;
@@ -70,6 +71,7 @@ window.onload = function() {
         rollingProbability += infiniteCount;
 
         let mainClone = main.cloneNode(true);
+        mainClone.classList.add('fuck-infinite-scroll');
         let sectionElements = mainClone.querySelectorAll('.main > div');
 
         Array.prototype.forEach.call(sectionElements, section => {
@@ -84,12 +86,10 @@ window.onload = function() {
           mainClone.style.transform = 'rotate(180deg)';
         }
 
-        mainClone.classList.add('fuck-infinite-scroll');
-
         let infiniteScrollDocumentFragment = document.createDocumentFragment();
         infiniteScrollDocumentFragment.appendChild(mainClone);
 
-        return body.appendChild(mainClone);
+        return body.appendChild(infiniteScrollDocumentFragment);
       }
     };
   };
