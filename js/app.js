@@ -48,6 +48,10 @@ window.onload = function() {
           imgElement.style.left = `${Math.floor(Math.random() * (windowWidth - imgElement.width))}px`;
         };
 
+        imgElement.addEventListener('click', function(event) {
+          window.open('https://www.eventbrite.com/e/stupid-shit-no-one-in-hawaii-needs-and-terrible-ideas-hackathon-tickets-29234665672', '_blank');
+        });
+
         return body.appendChild(imgElement);
       });
 
