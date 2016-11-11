@@ -72,6 +72,7 @@ window.onload = function() {
 
         let mainClone = main.cloneNode(true);
         mainClone.classList.add('fuck-infinite-scroll');
+
         let sectionElements = mainClone.querySelectorAll('.main > div');
 
         Array.prototype.forEach.call(sectionElements, section => {
