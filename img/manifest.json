@@ -1,17 +1,12 @@
 {
-	"name": "Stupid Shit No One In Hawaii Needs and Terrible Ideas Hackathon",
+	"name": "STUPID",
 	"icons": [
 		{
-			"src": "\/img\/android-chrome-192x192.png",
-			"sizes": "192x192",
-			"type": "image\/png"
-		},
-		{
-			"src": "\/img\/android-chrome-512x512.png",
-			"sizes": "512x512",
+			"src": "\/img\/android-chrome-144x144.png",
+			"sizes": "144x144",
 			"type": "image\/png"
 		}
 	],
-	"theme_color": "#9eff36",
+	"theme_color": "#ffffff",
 	"display": "standalone"
 }
