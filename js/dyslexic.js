@@ -15,7 +15,11 @@ String.prototype.shuffle = function () {
 const messages = [
   "Stop triggering me",
   "Did you just assume my gender?",
-  "How are mirrors real if our eyes aren't"
+  "How are mirrors real if our eyes aren't",
+  "Most Trees Are Blue",
+  "School Is The Tool To Brainwash The Youth",
+  "O shit Waddup",
+  "Baby pull me closer in the back seat of your rover" 
 ];
 
 function meme() {
