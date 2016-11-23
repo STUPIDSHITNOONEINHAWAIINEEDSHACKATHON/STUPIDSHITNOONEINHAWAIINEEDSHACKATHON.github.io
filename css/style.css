@@ -55,6 +55,43 @@ a.logo:hover {
   color: red;
 }
 
+.stupidShitLogo {
+  position: fixed;
+  top: 80%;
+  left: 85%;
+  width: 100px;
+  height: auto;
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 4s linear infinite;
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform:rotate(360deg);
+  }
+}
+
+.logoContainer {
+  display: block;
+  width 124px;
+  height: 93px;
+  background: url("/img/logo.png") -868px -2511px no-repeat;
+  top: 338px;
+  left: 1056.8px;
+}
+
 table.program {
   width: 500px;
   margin: 0 auto;
