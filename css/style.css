@@ -107,6 +107,11 @@ table.program {
     text-align: left;
 }
 
+/*ul, ol*/
+.entries {
+  list-style-type: none;
+}
+
 .categories li {
   background: yellow;
   margin: 5px;
