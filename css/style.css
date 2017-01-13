@@ -112,6 +112,11 @@ table.program {
   list-style-type: none;
 }
 
+.entries img {
+  min-width: 100px;
+  width: 30%;
+}
+
 .categories li {
   background: yellow;
   margin: 5px;
@@ -190,6 +195,18 @@ Sections
 
 #header {
   background-color: #9eff36;
+}
+
+#recap {
+  background-color: #E6834A;
+}
+
+#recap a {
+  color: white;
+}
+
+#recap a:hover {
+  color: blue;
 }
 
 #about {
