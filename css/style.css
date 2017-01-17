@@ -112,6 +112,11 @@ table.program {
   list-style-type: none;
 }
 
+.entries li {
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+}
+
 .entries img {
   min-width: 100px;
   width: 30%;
