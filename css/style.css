@@ -110,6 +110,7 @@ table.program {
 /*ul, ol*/
 .entries {
   list-style-type: none;
+  padding: 0px;
 }
 
 .entries li {
@@ -119,7 +120,7 @@ table.program {
 
 .entries img {
   min-width: 100px;
-  width: 30%;
+  max-width: 90%
 }
 
 .categories li {
